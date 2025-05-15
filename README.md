@@ -40,6 +40,8 @@ dwt_config_t config_options = {
     .pdoaMode = DWT_PDOA_M0   // PDOA mode
 };
 
+## 
+
 Configuration Notes:
 Channel Number: Choose between 5 or 9 based on regional regulations
 
