@@ -43,7 +43,7 @@ dwt_config_t config_options = {
 ```
 
 Configuration Notes:
-Channel Number: Choose between 5 or 9 based on regional regulations
+Channel Number: Choose between 5 or 9
 
 Preamble Length: Higher values (e.g., DWT_PLEN_1024) increase range but may reduce throughput
 
