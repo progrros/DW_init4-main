@@ -19,20 +19,25 @@ Define your device's role in `example_selection.h`:
 
 ### 2. Adjust the UWB settings in config_option.c:
 
+## UWB Configuration Options
+
+The system uses the following default configuration in `config_option.c`:
+
+```c
 dwt_config_t config_options = {
-    5,                  /* Channel number: 5 or 9 */
-    DWT_PLEN_1024,      /* Preamble length: DWT_PLEN_64 to DWT_PLEN_4096 */
-    DWT_PAC32,          /* Preamble acquisition chunk size */
-    9,                  /* TX preamble code */
-    9,                  /* RX preamble code */
-    3,                  /* SFD mode */
-    DWT_BR_850K,        /* Data rate */
-    DWT_PHRMODE_STD,    /* PHY header mode */
-    DWT_PHRRATE_STD,    /* PHY header rate */
-    (1024 + 1 + 8 - 8), /* SFD timeout */
-    DWT_STS_MODE_1,     /* STS mode */
-    DWT_STS_LEN_128,    /* STS length */
-    DWT_PDOA_M0         /* PDOA mode */
+    .chan = 5,               // Channel number (5 or 9)
+    .txPreambLength = DWT_PLEN_1024,  // Preamble length
+    .rxPAC = DWT_PAC32,      // Preamble acquisition chunk size
+    .txCode = 9,             // TX preamble code
+    .rxCode = 9,             // RX preamble code
+    .nsSFD = 3,              // SFD mode
+    .dataRate = DWT_BR_850K,  // Data rate
+    .phrMode = DWT_PHRMODE_STD, // PHY header mode
+    .phrRate = DWT_PHRRATE_STD, // PHY header rate
+    .sfdTO = (1024 + 1 + 8 - 8), // SFD timeout
+    .stsMode = DWT_STS_MODE_1, // STS mode
+    .stsLength = DWT_STS_LEN_128, // STS length
+    .pdoaMode = DWT_PDOA_M0   // PDOA mode
 };
 
 Configuration Notes:
